@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #333;
+  color: whitesmoke;
+  font-family: 'Courier New', Courier, monospace;
+}
+.btn {
+  position: relative;
+  width: 200px;
+  height: 60px;
+  background-color: orangered;
+  color: white;
+  box-shadow: -6px 6px 0 0 hsl(16, 100%, 30%);
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.btn:active {
+  top: 3px;
+  left: -3px;
+  box-shadow: -3px 3px 0 0 hsl(16, 100%, 30%);
+  background-color: hsl(16, 100%, 40%);
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  background: none;
+  border: 6px solid transparent;
+  border-right: 6px solid hsl(16, 100%, 30%);
+  border-left-width: 0;
+  top: 0;
+  left: -6px;
+}
+.btn:active::before {
+  border: 3px solid transparent;
+  border-right: 3px solid hsl(16, 100%, 30%);
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  background: none;
+  border: 6px solid transparent;
+  border-top: 6px solid hsl(16, 100%, 30%);
+  border-bottom-width: 0;
+  bottom: -6px;
+  right: 0;
+}
+.btn:active::after {
+  border: 3px solid transparent;
+  border-top: 3px solid hsl(16, 100%, 30%);
+}
